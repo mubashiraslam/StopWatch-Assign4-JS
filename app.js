@@ -15,29 +15,28 @@ var msecs=document.getElementById('msecs');
 
 but1.disabled=false;
 but2.disabled=false;
-btn3.disabled=false;
-
+btn3.disabled=true;
 
 
 function timer(){
-msec++;
-msecId.innerHTML=msec;
-if(msec>=100){
-sec++;
-msec=0;
-secId.innerHTML=sec;
-}
-if(sec>=60){
-    min++;
-    sec=0;
-minId.innerHTML=min;
-}
+    msec++;
+    msecId.innerHTML=msec;
+    if(msec>=100){
+        sec++;
+        msec=0;
+        secId.innerHTML=sec;
+    }
+    if(sec>=60){
+        min++;
+        sec=0;
+        minId.innerHTML=min;
+    }
 }
 
 function start(){
     interval=setInterval(timer, 10);
-        but1.disabled=true;
-        btn3.disabled=false;
+    but1.disabled=true;
+    btn3.disabled=false;
 }
         
 function pause(){
@@ -48,18 +47,16 @@ function pause(){
 
 function reset(){
     if(btn3.disabled=true){
-    but1.disabled=false;
-    mins.innerHTML=min;
-    secs.innerHTML=sec;
-    msecs.innerHTML=msec;
+        but1.disabled=false;
+        mins.innerHTML=min;
+        secs.innerHTML=sec;
+        msecs.innerHTML=msec;
     };
-msec=0;
-sec=0;
-min=0;
-msecId.innerHTML=msec;
-secId.innerHTML=sec;
-minId.innerHTML=min;
-pause();
+    msec=0;
+    sec=0;
+    min=0;
+    msecId.innerHTML=msec;
+    secId.innerHTML=sec;
+    minId.innerHTML=min;
+    pause();
 }
-
-
